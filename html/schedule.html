@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>週間スケジュール</title>
+  </head>
+  <body>
+    <h1>週間スケジュール</h1>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>時間</th>
+          <th>月曜</th>
+          <th>火曜</th>
+          <th>水曜</th>
+          <th>木曜</th>
+          <th>金曜</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>9:00</th>
+          <td>HTML 学習</td>
+          <td rowspan="2">CSS 演習</td>
+          <td>HTML 学習</td>
+          <td>JavaScript 学習</td>
+          <td>復習</td>
+        </tr>
+        <tr>
+          <th>10:00</th>
+          <td>HTML 演習</td>
+          <!-- rowspan で CSS 演習が続く -->
+          <td>HTML 演習</td>
+          <td>JavaScript 演習</td>
+          <td>プロジェクト</td>
+        </tr>
+        <tr>
+          <th>11:00</th>
+          <td colspan="5">昼休み前の自由学習</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
