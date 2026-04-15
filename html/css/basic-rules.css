@@ -1,0 +1,51 @@
+h1 {
+  color: #ff6b6b;
+  font-size: 36px;
+}
+
+h2 {
+  color: #4ecdc4;
+  font-size: 24px;
+
+  p {
+    color: #333333;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+}
+
+.page-title {
+  color: #1a1a2e;
+  font-size: 32px;
+  border-bottom: 3px solid #ff6b6b;
+}
+
+.normal-text {
+  color: #444444;
+}
+
+.highlight-text {
+  background-color: #fffde7;
+  color: #5d4037;
+  padding: 8px 12px;
+  border-left: 4px solid #fbc02d;
+}
+
+.caution-text {
+  color: #c62828;
+  font-weight: bold;
+}
+
+p {
+  color: #888888;
+}
+
+.special {
+  color: #1565c0;
+  font-weight: bold;
+}
+
+#very-special {
+  color: #e65100;
+  font-size: 20px;
+}
