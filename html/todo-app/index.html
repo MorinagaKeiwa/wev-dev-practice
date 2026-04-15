@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja"></html>
+<head>
+  <meta charset="UTF-8" />
+  <title>My ToDoアプリ</title>
+</head>
+<body>
+  <header>
+    <h1>My ToDoアプリ</h1>
+  </header>
+  <main>
+    <section>
+      <ul>
+        <li>
+          <input type="checkbox" id="breakfast name=breakfast" />
+          <label for="breakfast">朝ごはん食べる</label>
+          <button type="button">削除</button>
+        </li>
+        <li>
+          <input type="checkbox" id="webdev" name="webdev" />
+          <label for="webdev">Web Dev進める</label>
+          <button type="button">削除</button>
+        </li>
+        <li>
+          <input type="checkbox" checked id="sleep" name="sleep" />
+          <label for="sleep">たくさん寝る</label>
+          <button type="button">削除</button>
+        </li>
+      </ul>
+    </section>
+    <h2>今週の休日やること</h2>
+    <form>
+      <label for="todo">なにする</label>
+      <input type="text" id="todo" name="todo" placeholder="３キロ走る" />
+      <button type="submit">追加する</button>
+    </form>
+    <footer>
+      <p>&copy; 2026 My ToDo app</p>
+    </footer>
+  </main>
+</body>
