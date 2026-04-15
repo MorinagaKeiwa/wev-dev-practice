@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>フォームのサンプル</title>
+  </head>
+  <body>
+    <form>
+    <p>
+      <label for="fullname">氏名</label>
+      <input
+        type="text"
+        id="fullname"
+        name="fullname"
+        placeholder="例:田中　太郎"
+        required
+      />
+    </p>
+    <p>
+        <label for="email">メールアドレス</label>
+        <input type="email" id="email" name="email" placeholder="ecample@ecample" required>
+    </p>
+    <p>
+        <label for="age">年齢</laber>
+        <input type="number" id="age" name="age" placeholder="例:25">
+    </p>
+    <p>
+        <label for="birthdte">誕生日</label>
+        <input type="date" id="birthdte" name="birthdte">
+    </p>
+    <p>
+        <input type="checkbox" id="lang-html" name="lang" value="html">
+        <label for="lang-html">HTML</label>
+        &nbsp;
+        <input type="checkbox" id="lang-css" name="lang" value="css">
+        <label for="lang-css">CSS</label>
+        &nbsp;s
+        <input type="checkbox" id="lang-js" name="lang" value="js">
+        <label for="lang-js">JavaScript</label>
+    </p>
+
+    <p>
+        <label for="inquiry-type">お問い合わせ種別</label>
+        <select id="inquiry-type" name="inquiry-type">
+            <option value="">--選択してください--</option>
+            <option value="proguct">商品について</option>
+            <option value="shipping">発送について</option>
+            <option value="other">その他</options>
+        </select>
+    </p>
+    <p>
+        <label for="massage">自己紹介</label>
+        <textarea id="massage" name="massage" row="5" placeholder="自己紹介を入力してください"></textarea>
+    </p>
+<p>
+    <button type="submit">登録する</button>
+    &nbsp;
+    <button type="reset">入力をリセット</button>
+</p>
+</form>
+    <!-- <h1>ログイン</h1>
+
+    <form>
+      <p>
+        <label for="username">ユーザー名</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="例:tanaka_taro"
+          required
+        />
+      </p>
+      <p>
+        <label for="password">パスワード</label>
+        <input
+          type="text"
+          id="password"
+          name="password"
+          placeholder="パスワードを入力"
+          required
+        />
+      </p>
+      <p>
+        <button type="submit">ログイン</button>
+      </p>
+    </form> -->
+  </body>
+</html>
