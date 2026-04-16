@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Box Modelの練習</title>
+    <link rel="stylesheet" href="box-model.css" />
+  </head>
+  <body>
+    <h1>Box Model の練習</h1>
+
+    <div class="box">Content（テキスト）がここに入ります</div>
+
+    <h2>Padding の比較（背景色が広がる範囲に注目）</h2>
+
+    <div class="box padding-small">padding: 4px（窮屈）</div>
+    <div class="box padding-medium">padding: 16px（適切）</div>
+    <div class="box padding-large">padding: 48px（広い）</div>
+
+    <h2>Margin の比較（要素間の距離に注目）</h2>
+
+    <div class="box margin-small">margin-bottom: 4px</div>
+    <div class="box">← 上の要素との距離が 4px</div>
+
+    <div class="box margin-large">margin-bottom: 48px</div>
+    <div class="box">← 上の要素との距離が 48px</div>
+
+    <h2>Padding の 4 値指定（上 / 右 / 下 / 左）</h2>
+    <div class="box clock-demo">
+      padding: 40px(上) 8px(右) 8px(下) 8px(左)<br />
+      上だけ広く空いているはず
+    </div>
+    <h2>Border のバリエーション</h2>
+
+    <div class="card-solid">
+      <h3>solid（実線）</h3>
+      <p>最もよく使う枠線スタイルです。</p>
+    </div>
+
+    <div class="card-dashed">
+      <h3>dashed（破線）</h3>
+      <p>セクションの仮枠などによく使います。</p>
+    </div>
+
+    <div class="card-accent">
+      <h3>border-top でアクセントライン</h3>
+      <p>上部だけに太い色付きの線を入れるデザインです。</p>
+    </div>
+
+    <h2>box-sizing の比較（どちらも width: 300px）</h2>
+    <p>実際の横幅の違いに注目してください。</p>
+
+    <div class="size-content-box">
+      content-box（デフォルト）<br />
+      width: 300px + padding: 20px × 2 + border: 2px × 2<br />
+      → 実際の幅: <strong>344px</strong>
+    </div>
+
+    <div class="size-border-box">
+      border-box（推奨）<br />
+      width: 300px の中に padding と border が含まれる<br />
+      → 実際の幅: <strong>300px</strong>
+    </div>
+  </body>
+</html>
