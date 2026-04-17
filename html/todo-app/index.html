@@ -1,41 +1,62 @@
 <!doctype html>
-<html lang="ja"></html>
-<head>
-  <meta charset="UTF-8" />
-  <title>My ToDoアプリ</title>
-</head>
-<body>
-  <header>
-    <h1>My ToDoアプリ</h1>
-  </header>
-  <main>
-    <section>
-      <ul>
-        <li>
-          <input type="checkbox" id="breakfast name=breakfast" />
-          <label for="breakfast">朝ごはん食べる</label>
-          <button type="button">削除</button>
-        </li>
-        <li>
-          <input type="checkbox" id="webdev" name="webdev" />
-          <label for="webdev">Web Dev進める</label>
-          <button type="button">削除</button>
-        </li>
-        <li>
-          <input type="checkbox" checked id="sleep" name="sleep" />
-          <label for="sleep">たくさん寝る</label>
-          <button type="button">削除</button>
-        </li>
-      </ul>
-    </section>
-    <h2>今週の休日やること</h2>
-    <form>
-      <label for="todo">なにする</label>
-      <input type="text" id="todo" name="todo" placeholder="３キロ走る" />
-      <button type="submit">追加する</button>
-    </form>
-    <footer>
-      <p>&copy; 2026 My ToDo app</p>
-    </footer>
-  </main>
-</body>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>My ToDoアプリ</title>
+  </head>
+  <body>
+    <!-- <div class="container"> -->
+    <header>
+      <h1 class="header-design">My ToDoアプリ</h1>
+    </header>
+    <main>
+      <section class="input-section">
+        <label for="todo">なにする</label>
+        <input
+          class="input-text"
+          type="text"
+          id="todo"
+          name="todo"
+          placeholder="３キロ走る"
+        />
+
+        <button id="addbtn" type="submit">追加する</button>
+      </section>
+
+      <h2>今週の休日やること</h2>
+      <section>
+        <ul class="task-list">
+          <li class="task-item">
+            <input type="checkbox" id="breakfast name=breakfast" />
+            <label class="text-label" for="breakfast">朝ごはん食べる</label>
+            <div class="task-action">
+              <button class="btn-complete" type="button">完了</button>
+              <button class="btn-delete" type="button">削除</button>
+            </div>
+          </li>
+          <li class="task-item">
+            <input type="checkbox" id="webdev" name="webdev" />
+            <label class="text-label" for="webdev">Web Dev進める</label>
+            <div class="task-action">
+              <button class="btn-complete" type="button">完了</button>
+              <button class="btn-delete">削除</button>
+            </div>
+          </li>
+          <li class="task-item">
+            <input type="checkbox" checked id="sleep" name="sleep" />
+            <label class="text-label" for="sleep">たくさん寝る</label>
+            <div class="task-action">
+              <button class="btn-complete" type="button">完了</button>
+              <button class="btn-delete" type="button">削除</button>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        <p>&copy; 2026 My ToDo app</p>
+      </footer>
+    </main>
+  </body>
+</html>
