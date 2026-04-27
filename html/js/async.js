@@ -137,3 +137,61 @@ async function multiStep() {
 }
 
 multiStep();
+
+function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function parallel() {
+  const start = Date.now();
+
+  await Promise.all([wait(1000), wait(1000), wait(1000)]);
+
+  console.log(`${Date.now() - start}msかかった`);
+}
+
+parallel();
+
+function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function runSerial() {
+  const start = Date.now();
+  await wait(500);
+  await wait(500);
+  await wait(500);
+  console.log(`直列: ${Date.now() - start} ms`);
+}
+
+async function runParallel() {
+  const start = Date.now();
+  await Promise.all([wait(500), wait(500), wait(500)]);
+  console.log(`並列: ${Date.now() - start} ms`);
+}
+
+runSerial();
+runParallel();
+
+function fetchScore(name) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const scores = { Taro: 85, Hanako: 92, Jiro: 78 };
+      resolve({ name, score: scores[name] ?? 0 });
+    }, 600);
+  });
+}
+
+async function loadScores() {
+  const results = await Promise.all([
+    fetchScore("Taro"),
+    fetchScore("Hanako"),
+    fetchScore("Jiro"),
+  ]);
+
+  results.forEach((r) => {
+    console.log(`${r.name}: ${r.score} 点`);
+  });
+}
+
+loadScores();
