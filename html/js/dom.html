@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM 操作の練習</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        max-width: 700px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+      section {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 24px;
+      }
+      h2 {
+        margin-top: 0;
+        font-size: 1rem;
+        color: #555;
+      }
+      button {
+        padding: 8px 16px;
+        cursor: pointer;
+        margin: 4px;
+      }
+      #hoverBox {
+        width: 160px;
+        height: 80px;
+        background: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        user-select: none;
+      }
+      #scrollIndicator {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 4px;
+        background: steelblue;
+        width: 0;
+        transition: width 0.1s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="scrollIndicator"></div>
+    <h1 id="mainTitle">DOM 操作の練習</h1>
+
+    <section>
+      <h2>① 要素の変更</h2>
+      <p id="message">ここのテキストが変わります</p>
+      <button id="changeTextBtn">テキストを変える</button>
+      <button id="toggleClassBtn">クラスを付け外し</button>
+    </section>
+
+    <section>
+      <h2>② 要素の追加・削除</h2>
+      <ul id="fruitList">
+        <li>りんご</li>
+        <li>バナナ</li>
+      </ul>
+      <button id="addItemBtn">項目を追加</button>
+      <button id="removeItemBtn">最後の項目を削除</button>
+    </section>
+
+    <section>
+      <h2>③ マウスイベント（mouseenter / mouseleave / click / dblclick）</h2>
+      <div id="hoverBox">マウスを乗せてみて</div>
+      <p id="mouseLog">-</p>
+    </section>
+
+    <section>
+      <h2>④ キーボードイベント（keydown / keyup）</h2>
+      <p>どこかクリックしてからキーを押してください</p>
+      <div
+        id="keyLog"
+        style="
+          background: #f5f5f5;
+          padding: 8px;
+          border-radius: 4px;
+          min-height: 2em;
+        "
+      >
+        -
+      </div>
+    </section>
+
+    <section>
+      <h2>⑤ フォームイベント（input / focus / blur / submit）</h2>
+      <form id="myForm">
+        <input
+          id="nameInput"
+          type="text"
+          placeholder="名前を入力"
+          style="padding: 6px; margin-right: 8px"
+        />
+        <button type="submit">送信</button>
+      </form>
+      <div
+        id="formLog"
+        style="
+          background: #f5f5f5;
+          padding: 8px;
+          border-radius: 4px;
+          min-height: 2em;
+          margin-top: 8px;
+        "
+      >
+        -
+      </div>
+    </section>
+
+    <section>
+      <h2>⑥ ウィンドウイベント（scroll / resize）</h2>
+      <p>ページをスクロール または ウィンドウをリサイズしてみてください</p>
+      <div
+        id="windowLog"
+        style="background: #f5f5f5; padding: 8px; border-radius: 4px"
+      >
+        scroll: 0px / width: -px
+      </div>
+      <div
+        style="
+          height: 300px;
+          background: linear-gradient(#e0f0ff, #fff);
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #888;
+          margin-top: 12px;
+        "
+      >
+        ↓ スクロールエリア ↓
+      </div>
+    </section>
+
+    <script src="dom.js"></script>
+  </body>
+</html
