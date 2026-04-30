@@ -71,6 +71,10 @@ label {
   font-size: large;
 }
 
+label1 {
+  flex: 1;
+}
+
 .flex {
   display: flex;
   align-items: center;
@@ -134,4 +138,9 @@ footer {
   justify-content: center;
   padding: 1px;
   margin-top: 10px;
+}
+
+#errorMsg {
+  color: red;
+  display: none;
 }

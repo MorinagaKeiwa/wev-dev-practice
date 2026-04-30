@@ -11,7 +11,7 @@
       <h1 class="header-design">My ToDoアプリ</h1>
     </header>
     <main>
-      <section class="input-section">
+      <form class="input-section">
         <label for="todo">なにする</label>
         <input
           class="input-text"
@@ -21,13 +21,16 @@
           placeholder="３キロ走る"
         />
 
-        <button id="addbtn" type="submit">追加する</button>
-      </section>
+        <button id="addBbtn" type="submit">追加する</button>
+
+        <p id="errorMsg">タスクを入力してください</p>
+      </form>
 
       <h2>今週の休日やること</h2>
+      <h2 id="taskCount">タスク一覧（0 件）</h2>
       <section>
         <ul class="task-list">
-          <li class="task-item">
+          <!-- <li class="task-item">
             <input type="checkbox" id="breakfast name=breakfast" />
             <label class="text-label" for="breakfast">朝ごはん食べる</label>
             <div class="task-action">
@@ -50,7 +53,7 @@
               <button class="btn-complete" type="button">完了</button>
               <button class="btn-delete" type="button">削除</button>
             </div>
-          </li>
+          </li> -->
         </ul>
       </section>
 
@@ -58,5 +61,6 @@
         <p>&copy; 2026 My ToDo app</p>
       </footer>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
