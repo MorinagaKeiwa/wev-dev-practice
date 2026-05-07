@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CORS テスト</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        max-width: 600px;
+        margin: 50px auto;
+      }
+      button {
+        padding: 8px 16px;
+        margin: 4px;
+        cursor: pointer;
+      }
+      pre {
+        background: #f0f0f0;
+        padding: 12px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CORS テスト</h1>
+    <p>API サーバー（port: 8000）へ fetch でアクセスします。</p>
+    <button onclick="getTodos()">GET /todos</button>
+    <button onclick="createTodo()">POST /todos</button>
+    <div id="result"></div>
+
+    <script>
+      const API = "http://localhost:8000";
+
+      async function getTodos() {
+        const res = await fetch(`${API}/todos`);
+        const data = await res.json();
+        show("GET /todos", data);
+      }
+
+      async function createTodo() {
+        const res = await fetch(`${API}/todos`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ title: "新しいタスク" }),
+        });
+        const data = await res.json();
+        show("POST /todos", data);
+      }
+
+      function show(label, data) {
+        document.getElementById("result").innerHTML =
+          `<h3>${label}</h3><pre>${JSON.stringify(data, null, 2)}</pre>`;
+      }
+    </script>
+  </body>
+</html>
