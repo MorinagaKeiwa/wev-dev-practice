@@ -15,16 +15,16 @@ console.log(`${formatProduct("TypeScript入門書", taxIncluded)}`);
 
 log("計算が完了しました");
 
-function formatPrice(price: number, unit?: string): string {
+function formatPrice1(price: number, unit?: string): string {
   const u = unit ?? "円";
   return `${price.toLocaleString()}${u}`;
 }
 function formatPrice2(price: number, unit: string = "円"): string {
-  return `${price.toLocaleString()}${unit}`;
+  return `${price}${unit}`;
 }
 
-console.log(formatPrice(1980));
-console.log(formatPrice(29.99, "USD"));
+console.log(formatPrice1(1980));
+console.log(formatPrice1(29.99, "USD"));
 
 console.log(formatPrice2(1980));
 console.log(formatPrice2(29.99, "USD"));
