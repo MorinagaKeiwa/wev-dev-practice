@@ -1,0 +1,32 @@
+# services:
+# app-a:
+# build: ./app-a
+# ports:
+# - "8080:3000"
+
+# networks:
+# - compose-network
+
+# app-b:
+# build: ./app-b
+# networks:
+# - compose-network
+
+# networks:
+# compose-network:
+
+services:
+  app-a:
+    build: ./app-a
+    ports:
+      - "8080:3000"
+    networks:
+      - compose-network
+
+  app-b:
+    build: ./app-b
+    networks:
+      - compose-network
+
+networks:
+  compose-network:

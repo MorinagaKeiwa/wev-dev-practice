@@ -1,0 +1,9 @@
+{
+  "name": "dev-sync",
+  "scripts": {
+    "dev": "nodemon -L index.js"
+  },
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

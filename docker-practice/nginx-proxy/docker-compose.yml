@@ -1,0 +1,19 @@
+services:
+  web:
+    build: ./nginx
+    ports:
+      - "8080:80"
+    networks:
+      - proxy-network
+    depends_on:
+      - api
+
+  api:
+    build: ./api
+    expose:
+      - "3000"
+    networks:
+      - proxy-network
+
+networks:
+  proxy-network:

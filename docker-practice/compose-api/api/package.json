@@ -1,0 +1,6 @@
+{
+  "name": "compose-api",
+  "dependencies": {
+    "mysql2": "^3.6.0"
+  }
+}

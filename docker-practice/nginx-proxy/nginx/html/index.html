@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Nginx + API</title>
+  </head>
+  <body>
+    <h1>Nginx + Node.js API</h1>
+    <button onclick="callApi()">API を呼び出す</button>
+    <p id="result"></p>
+
+    <script>
+      async function callApi() {
+        const res = await fetch("/api/hello");
+        const data = await res.json();
+        document.getElementById("result").textContent = data.message;
+      }
+    </script>
+  </body>
+</html>
