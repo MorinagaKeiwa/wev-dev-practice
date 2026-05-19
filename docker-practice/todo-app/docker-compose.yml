@@ -1,0 +1,50 @@
+services:
+  web:
+    build: ./nginx
+    ports:
+      - "8080:80"
+    networks:
+      - todo-network
+    depends_on:
+      - api
+
+  api:
+    build: ./api
+    expose:
+      - "3000"
+    networks:
+      - todo-network
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DB_HOST=db
+      - DB_USER=${MYSQL_USER}
+      - DB_PASSWORD=${MYSQL_PASSWORD}
+      - DB_NAME=${MYSQL_DATABASE}
+
+  db:
+    image: mysql:8.0
+    expose:
+      - "3306"
+    networks:
+      - todo-network
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - todo-db-data:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+
+volumes:
+  todo-db-data:
+
+networks:
+  todo-network:

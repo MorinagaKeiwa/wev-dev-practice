@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Todo App</h1>
+
+      <div class="input-area">
+        <input type="text" id="todoInput" placeholder="新しい Todo を入力..." />
+        <button onclick="addTodo()">追加</button>
+      </div>
+
+      <ul id="todoList"></ul>
+    </div>
+
+    <script>
+      async function loadTodos() {
+        const res = await fetch("/api/todos");
+        const todos = await res.json();
+        const list = document.getElementById("todoList");
+        list.innerHTML = "";
+        todos.forEach((todo) => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+          <span>${todo.title}</span>
+          <button onclick="deleteTodo(${todo.id})">削除</button>
+        `;
+          list.appendChild(li);
+        });
+      }
+
+      async function addTodo() {
+        const input = document.getElementById("todoInput");
+        const title = input.value.trim();
+        if (!title) {
+          alert("Todo を入力してください");
+          return;
+        }
+        await fetch("/api/todos", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ title }),
+        });
+        input.value = "";
+        loadTodos();
+      }
+
+      async function deleteTodo(id) {
+        if (!confirm("削除しますか？")) return;
+        await fetch(`/api/todos/${id}`, { method: "DELETE" });
+        loadTodos();
+      }
+
+      loadTodos();
+    </script>
+  </body>
+</html>
