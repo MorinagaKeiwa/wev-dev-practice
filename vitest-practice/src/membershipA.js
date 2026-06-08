@@ -1,11 +1,14 @@
+// 会員種別に応じて割引率を返す
 export function getDiscountRate(memberType) {
   if (memberType === "gold") {
-    return 0.3;
+    return 0.3; // 30% 割引
   } else if (memberType === "silver") {
-    return 0.15;
+    return 0.15; // 15% 割引
   }
-  return 0;
+  return 0; // 割引なし
 }
+
+// 年齢に応じたメッセージを返す
 export function getAgeMessage(age) {
   if (age < 0) {
     return "エラー：年齢が無効です";
